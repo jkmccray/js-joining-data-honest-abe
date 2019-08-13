@@ -1,24 +1,110 @@
 {
-  "posts": [
+  "corporations": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "Marathon"
     },
     {
       "id": 2,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "Apple"
     }
   ],
-  "comments": [
+  "pacs": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "American Bankers Assn"
+    },
+    {
+      "id": 2,
+      "name": "Operating Engineers Union"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "politicians": [
+    {
+      "id": 1,
+      "name": "Kevin McCarthy"
+    },
+    {
+      "id": 2,
+      "name": "Steny Hoyer"
+    }
+  ],
+  "commercialInterests": [
+    {
+      "id": 1,
+      "interestName": "Veterans Affairs"
+    },
+    {
+      "id": 2,
+      "interestName": "Bankruptcy"
+    }
+  ],
+  "legislativeBills": [
+    {
+      "id": 1,
+      "billName": "H.R.4181",
+      "description": "To amend the Internal Revenue Code of 1986 to allow distributions from qualified cash or deferred arrangements in the event that the employer files for chapter 11 bankruptcy and the employee is not regularly scheduled for work or paid.",
+      "commercialInterestId": 2
+    },
+    {
+      "id": 2,
+      "billName": "H.R.4179",
+      "description": "To improve the efforts of the Department of Veterans Affairs to prevent suicide by women veterans, and for other purposes",
+      "commercialInterestId": 1
+    }
+  ],
+  "commercialInterestsOfCorporations": [
+    {
+      "id": 1,
+      "corporationId": 2,
+      "commercialInterestId": 1
+    },
+    {
+      "id": 2,
+      "corporationId": 1,
+      "commercialInterestId": 2
+    }
+  ],
+  "corporateDonationsToPacs": [
+    {
+      "id": 1,
+      "donationDate": "2019-08-01",
+      "donationAmount": "$100000",
+      "corporationId": 2,
+      "pacId": 1
+    },
+    {
+      "id": 2,
+      "donationDate": "2019-07-21",
+      "donationAmount": "$200000",
+      "corporationId": 1,
+      "pacId": 2
+    }
+  ],
+  "pacDonationsToPoliticians": [
+    {
+      "id": 1,
+      "donationAmount": "$50000",
+      "politicianId": 2,
+      "pacId": 1
+    },
+    {
+      "id": 2,
+      "donationAmount": "$150000",
+      "politicianId": 1,
+      "pacId": 2
+    }
+  ],
+  "billsSponsoredByPoliticians": [
+    {
+      "id": 1,
+      "legislativeBillId": 2,
+      "politicianId": 1
+    },
+    {
+      "id": 2,
+      "legislativeBillId": 1,
+      "politicianId": 2
+    }
+  ]
 }
