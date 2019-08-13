@@ -17,6 +17,14 @@
     {
       "id": 2,
       "name": "Operating Engineers Union"
+    },
+    {
+      "id": 3,
+      "name": "American Gas Association"
+    },
+    {
+      "id": 4,
+      "name": "League of Conservation Voters Action Fund"
     }
   ],
   "politicians": [
@@ -36,7 +44,15 @@
     },
     {
       "id": 2,
-      "interestName": "Bankruptcy"
+      "interestName": "Energy"
+    },
+    {
+      "id": 3,
+      "interestName": "Employment"
+    },
+    {
+      "id": 4,
+      "interestName": "Natural Resources"
     }
   ],
   "legislativeBills": [
@@ -63,6 +79,16 @@
       "id": 2,
       "corporationId": 1,
       "commercialInterestId": 2
+    },
+    {
+      "id": 3,
+      "corporationId": 2,
+      "commercialInterestId": 4
+    },
+    {
+      "id": 4,
+      "corporationId": 1,
+      "commercialInterestId": 3
     }
   ],
   "corporateDonationsToPacs": [
@@ -79,6 +105,20 @@
       "donationAmount": "$200000",
       "corporationId": 1,
       "pacId": 2
+    },
+    {
+      "id": 3,
+      "donationDate": "2019-04-23",
+      "donationAmount": "$80000",
+      "corporationId": 2,
+      "pacId": 4
+    },
+    {
+      "id": 4,
+      "donationDate": "2019-02-12",
+      "donationAmount": "$90000",
+      "corporationId": 1,
+      "pacId": 3
     }
   ],
   "pacDonationsToPoliticians": [
@@ -92,7 +132,25 @@
       "id": 2,
       "donationAmount": "$150000",
       "politicianId": 1,
+      "pacId": 3
+    },
+    {
+      "id": 3,
+      "donationAmount": "$250000",
+      "politicianId": 1,
       "pacId": 2
+    },
+    {
+      "id": 4,
+      "donationAmount": "$15000",
+      "politicianId": 1,
+      "pacId": 4
+    },
+    {
+      "id": 5,
+      "donationAmount": "$75000",
+      "politicianId": 2,
+      "pacId": 3
     }
   ],
   "billsSponsoredByPoliticians": [
@@ -103,6 +161,11 @@
     },
     {
       "id": 2,
+      "legislativeBillId": 1,
+      "politicianId": 1
+    },
+    {
+      "id": 3,
       "legislativeBillId": 1,
       "politicianId": 2
     }
