@@ -17,14 +17,10 @@ const API = {
     return fetch(`http://localhost:8088/pacDonationsToPoliticians?politicianId=${politicianId}&_expand=pac`)
       .then(data => data.json())
   },
-  getPacData() {
-    return fetch("http://localhost:8088/pacs?_embed=corporateDonationsToPacs")
+  getCorporateDonationsToPacsData(pacId) {
+    return fetch(`http://localhost:8088/corporateDonationsToPacs?pacId=${pacId}&_expand=corporation`)
       .then(data => data.json())
-  },
-  getCorporationData() {
-    return fetch("http://localhost:8088/corporations?_embed=commercialInterestsOfCorporations")
-      .then(data => data.json())
-  },
+  }
 }
 
 export default API

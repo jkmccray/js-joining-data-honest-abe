@@ -12,7 +12,6 @@ API.getPoliticianData()
             const billId = billObj.legislativeBillId
             API.getLegislativeBillData(billId)
               .then(bill => {
-                console.log(politicianObj.name, bill)
                 const billObject = bill[0]
                 components.createBillComponent(billObject, politicianId)
               })
@@ -20,8 +19,14 @@ API.getPoliticianData()
         })
       API.getPacDonationsToPoliticiansData(politicianId)
         .then(donationsArr => {
-          donationsArr.forEach(donation => {
-            console.log(politicianObj.name, donation.pac.name)
+          donationsArr.forEach(donationObj => {
+            const pacObj = donationObj.pac
+            components.createFunderComponent(pacObj.name, politicianId)
+            API.getCorporateDonationsToPacsData(pacObj.id)
+            .then(donationArray => {
+              const corpName = donationArray[0].corporation.name
+              components.createInfluencerComponent(corpName, politicianId)
+            })
           })
         })
     })
