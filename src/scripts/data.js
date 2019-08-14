@@ -2,25 +2,29 @@
 
 const API = {
   getPoliticianData() {
-    return fetch("http://localhost:8088/politicians?_embed=pacDonationsToPoliticians&_embed=billsSponsoredByPoliticians&_embed=")
-    .then(data => data.json())
+    return fetch("http://localhost:8088/politicians?_embed=billsSponsoredByPoliticians")
+      .then(data => data.json())
+  },
+  getBillsSponsoredByPoliticians(politicianId) {
+    return fetch(`http://localhost:8088/billsSponsoredByPoliticians?politicianId=${politicianId}&_expand=legislativeBill&_expand=politician`)
+      .then(data => data.json())
+  },
+  getLegislativeBillData(billId) {
+    return fetch(`http://localhost:8088/legislativeBills?id=${billId}&_expand=commercialInterest`)
+      .then(data => data.json())
+  },
+  getPacDonationsToPoliticiansData(politicianId) {
+    return fetch(`http://localhost:8088/pacDonationsToPoliticians?politicianId=${politicianId}&_expand=pac`)
+      .then(data => data.json())
   },
   getPacData() {
     return fetch("http://localhost:8088/pacs?_embed=corporateDonationsToPacs")
-    .then(data => data.json())
+      .then(data => data.json())
   },
   getCorporationData() {
     return fetch("http://localhost:8088/corporations?_embed=commercialInterestsOfCorporations")
-    .then(data => data.json())
+      .then(data => data.json())
   },
-  getLegislativeBillData() {
-    return fetch("http://localhost:8088/legislativeBills?_expand=commercialInterest")
-    .then(data => data.json())
-  },
-  getBillsSponsoredByPoliticians() {
-    return fetch("http://localhost:8088/billsSponsoredByPoliticians?_expand=legislativeBill&_expand=politician")
-    .then(data => data.json())
-  }
 }
 
 export default API
